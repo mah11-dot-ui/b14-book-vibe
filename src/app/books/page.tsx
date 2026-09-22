@@ -2,7 +2,7 @@ import BookCard from "../../components/Shared/BookCard";
 import { IBook } from "@/types/booksType";
 
 const getBooks = async () => {
-  const res = await fetch("http://localhost:3000/booksData.json");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/booksData.json`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch books");
@@ -24,13 +24,12 @@ const Books = async () => {
         </span>
 
         <h2 className="text-4xl font-extrabold md:text-5xl">
-          Explore All{" "}
-          <span className="text-primary">Books</span>
+          Explore All <span className="text-primary">Books</span>
         </h2>
 
         <p className="mx-auto mt-3 max-w-2xl text-base-content/60">
-          Discover amazing stories, timeless classics, and inspiring books
-          from authors around the world.
+          Discover amazing stories, timeless classics, and inspiring books from
+          authors around the world.
         </p>
       </div>
 
